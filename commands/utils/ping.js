@@ -2,14 +2,36 @@ module.exports = {
     type: "messageCreate",
     code: `
     $let[mes;$messageSlice[1]]
-    $if[$and[$checkContains[$messageContent[$channelID;$messageID];<@1447615755985227776>];$get[mes]==]==true;
-        $title[Hi!!!!]
-        $addField[About;Chu is a bot made to do fun stuff. Chu is in BETA, bug reporting available soon.\nChu is actively being developed on. If you are actively using Chu and Chu suddenly pauses, please give Chu a moment! Chu promises to not go down often!]
-        $addField[Prefixes;Default prefix: \`c!\`
+    $if[$and[$checkContains[$messageContent[$channelID;$messageID];<@$botID>];$get[mes]==]==true;
+        $onlyIf[$getServerVar[pingCooldown;$guildID;0]<$getTimestamp;]
+
+        $let[p;$getUserVar[prefix;$authorID;c!]]
+        $addContainer[
+            $addSection[
+                $addTextDisplay[# Hello!
+Chu, at your service!
+-# Chu was built to be useful and do fun stuff!]
+                $addThumbnail[https://cdn.discordapp.com/attachments/1455724628843430033/1551637900016357386/image_cropped.png]
+            ]
+            $addSeparator[Large;true]
+
+            $addTextDisplay[## Prefixes
+For now, Chu uses legacy commands!
+Default prefix: \`c!\`
 Custom prefix for this server: \`$getGuildVar[prefix;$guildID;c!]\`
 Custom prefix for you: \`$getUserVar[prefix;$authorID;c!]\`
--# Set your prefix with \`c!prefix <new prefix>\`]
-        $addField[Available commands;$commandNames[messageCreate;, ]\n-# The list of commands above were auto generated, some commands may not be finished or usable.]
+-# Tip: Set your prefix with \`c!prefix <new prefix>\`]
+            
+            $addSeparator[Small;true]
+
+            $addTextDisplay[## Available commands]
+            $addTextDisplay[### 🎶 Music
+$get[p]join (All other music functions are available on the player)]
+            $addTextDisplay[### 🔧 Configuration
+$get[p]prefix $get[p]config]
+        ]
+
+        $setServerVar[pingCooldown;$sum[$getTimestamp;60000]]
     ]
     `
 }

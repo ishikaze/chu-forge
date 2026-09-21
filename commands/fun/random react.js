@@ -7,7 +7,7 @@ module.exports = {
 
     $let[emojis;$guildEmojis[$guildID; ]]
 
-    $if[$getServerVar[allowBaffEmojis;$guildid]==true;
+    $if[$getServerVar[allowBaffEmojis;$guildid;false]==true;
         $let[emojis;$get[emojis] $guildEmojis[1131915328083984384; ]]
     ]
 
