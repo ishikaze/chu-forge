@@ -1,0 +1,23 @@
+name: Deploy Discord Bot
+
+on:
+  push:
+    branches:
+      - main # Change this if your main branch is named 'master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/chu-forge
+            git pull origin main
+            npm install
+            pm2 restart chu

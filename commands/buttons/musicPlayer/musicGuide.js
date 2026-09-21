@@ -13,7 +13,7 @@ Starts playing the previously played track in the queue
 Plays/Resumes the current track
 ### <:pause:1550869637531697172> Pause track
 Pauses the current track
-### <:next:1550869623958929579>
+### <:next:1550869623958929579> Next track
 Starts playing the next track in the queue
 ### <:volup:1550869645391691866> Volume up
 Turns the volume up by 10%
