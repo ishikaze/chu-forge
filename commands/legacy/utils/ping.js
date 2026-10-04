@@ -10,7 +10,7 @@ module.exports = {
             $addSection[
                 $addTextDisplay[# Hello!
 Chu, at your service!
--# Chu was built to be useful and do fun stuff!\n-# Running v0.2]
+-# Chu was built to be useful and do fun stuff!\n-# Running v0.3 (2569.10.5.08)]
                 $addThumbnail[https://cdn.discordapp.com/attachments/1455724628843430033/1551637900016357386/image_cropped.png]
             ]
             $addSeparator[Large;true]
@@ -28,6 +28,7 @@ Custom prefix for you: \`$getUserVar[prefix;$authorID;c!]\`
             $addTextDisplay[### 🎶 Music
 $get[p]join, $get[p]join
 (All other music functions are available on the player)]
+
             $addTextDisplay[### 🔧 Configuration
 $get[p]prefix $get[p]config]
         ]

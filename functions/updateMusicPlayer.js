@@ -162,11 +162,15 @@ module.exports = {
     ]
 
     $if[$env[data;current;info;title]==null;
-        $setServerVar[placeholderTrack;true]
-        $jsonLoad[data;$playerAddTrack[$guildID;https://youtu.be/EKZNd2JMQPE]]
+        $if[$channelVoiceMemberCount[$voiceID[$guildID;$botID]]==1;
+            $playerDestroy[$guildID;botalone]
+        ;
+            $setServerVar[placeholderTrack;true]
+            $jsonLoad[data;$playerAddTrack[$guildID;https://youtu.be/EKZNd2JMQPE]]
 
-        $setServerVar[latestRequestData;$jsonStringify[data]]
-        $if[$playerSetVolume[$guildID;10]==true;]
+            $setServerVar[latestRequestData;$jsonStringify[data]]
+            $if[$playerSetVolume[$guildID;10]==true;]
+        ]
     ]
   `
 };
