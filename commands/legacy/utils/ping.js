@@ -10,7 +10,7 @@ module.exports = {
             $addSection[
                 $addTextDisplay[# Hello!
 Chu, at your service!
--# Chu was built to be useful and do fun stuff!]
+-# Chu was built to be useful and do fun stuff!\nRunning v0.2]
                 $addThumbnail[https://cdn.discordapp.com/attachments/1455724628843430033/1551637900016357386/image_cropped.png]
             ]
             $addSeparator[Large;true]

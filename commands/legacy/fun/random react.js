@@ -1,6 +1,7 @@
 module.exports = {
     type: "messageCreate",
     code: `
+    $onlyIf[$authorID!=$botID;]
     $onlyIf[$dmChannelID[$authorID]!=$channelID;]
     $onlyIf[$getUserVar[reactCooldown]<$getTimestamp;]
     $onlyIf[$getServerVar[randomReactionsEnabled;$guildID;false]==true;]
