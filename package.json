@@ -14,12 +14,14 @@
     "@discordjs/opus": "^0.10.0",
     "@snazzah/davey": "^0.1.12",
     "@tryforge/forge.db": "^2.1.1",
+    "@tryforge/forge.linked": "^2.2.1",
     "@tryforge/forge.music": "^1.0.0",
     "@tryforge/forgescript": "github:tryforge/ForgeScript#main",
     "discord-player-spotify": "^1.1.9",
     "discord-player-youtubei": "^3.1.0",
     "dotenv": "^17.4.2",
     "ffmpeg-static": "^5.3.0",
+    "forge.json": "^1.1.1",
     "simple-ytdl-core": "^1.1.1",
     "sqlite3": "^6.0.1"
   }
