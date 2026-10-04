@@ -2,8 +2,6 @@ module.exports = {
     name: "join",
     type: "messageCreate",
     code: `
-    $onlyIf[$authorID==$botOwnerID;No.]
-    
     $if[$playerExists==true;
         $if[$voiceID[$guildID;$authorID]==$voiceID[$guildID;$botID];
             Chu already joined!
