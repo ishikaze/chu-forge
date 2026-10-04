@@ -8,8 +8,6 @@ module.exports = {
         
         $if[$isValidJSON[$playerAddTrack[$guildID;$env[data;tracks;0;url]]]==true;]
 
-        $setServerVar[latestRequestData;$jsonStringify[data]]
-        $if[$playerSetVolume[$guildID;10]==true;]
         $if[$getServerVar[placeholderTrack;$guildID;false]==true;
             $if[$playerSkip==true;
                 $updateMusicAction[Player auto-skipped a placeholder track]
@@ -18,6 +16,7 @@ module.exports = {
             ]
         ]
         $addTextDisplay[✅ Added [$env[data;tracks;0;title]\\]($env[data;tracks;0;url]) to the queue!]
+        $updateMusicAction[<@$authorID> requested [$env[data;tracks;0;title]\\]($env[data;tracks;0;url])]
         $interactionUpdate
     ]
     `
