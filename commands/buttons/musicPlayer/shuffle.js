@@ -3,7 +3,7 @@ module.exports = {
     type: "interactionCreate",
     code: `
     $if[$playerShuffle>0;
-        $updateMusicAction[<@$authorID> shuffled the queue]
+        $updateMusicAction[[@$username\\]($userURL[$authorID]) shuffled the queue]
     ]
     
     `

@@ -4,7 +4,7 @@ module.exports = {
     code: `
     $if[$playerPrevious==true;
         $jsonLoad[data;$playerNextTrack]
-        $updateMusicAction[<@$authorID> jumped back from $env[data;title]]
+        $updateMusicAction[[@$username\\]($userURL[$authorID]) jumped back from $env[data;title]]
     ]
     
     `

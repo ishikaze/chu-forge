@@ -15,7 +15,7 @@ module.exports = {
                 $if[$playerSetVolume[$guildID;$getServerVar[defaultVolume;$guildID;50]]==true;]
             ]
         ]
-        $updateMusicAction[<@$authorID> requested [$env[data;tracks;0;title]\\]($env[data;tracks;0;url])]
+        $updateMusicAction[[@$username\\]($userURL[$authorID]) requested [$env[data;tracks;0;title]\\]($env[data;tracks;0;url])]
         $interactionUpdate[$addTextDisplay[✅ Added [$env[data;tracks;0;title]\\]($env[data;tracks;0;url]) to the queue!]]
     ]
     `

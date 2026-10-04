@@ -9,7 +9,7 @@ module.exports = {
     ;
         $deferUpdate
         $if[$playerSeek[$guildId;$multi[$input[position];1000]]==true;
-            $updateMusicAction[<@$authorID> seeked to $input[position] seconds]
+            $updateMusicAction[[@$username\\]($userURL[$authorID]) seeked to $input[position] seconds]
         ]
     ]
     
