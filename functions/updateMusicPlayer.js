@@ -164,6 +164,26 @@ module.exports = {
     $if[$env[data;current;info;title]==null;
         $if[$channelVoiceMemberCount[$voiceID[$guildID;$botID]]==1;
             $playerDestroy[$guildID;botalone]
+            $try[
+                $let[deleted;$deleteMessage[$getServerVar[musicPlayerChn];$getServerVar[musicPlayer]]]
+                $if[
+                    $get[deleted]==1;
+                    $setServerVar[musicChnSent;0]
+                    $setServerVar[musicPlayerChn;]
+                    $setServerVar[musicPlayer;]
+                    $updateMusicPlayer[]
+                ;
+                    $setServerVar[musicChnSent;0]
+                    $setServerVar[musicPlayerChn;]
+                    $setServerVar[musicPlayer;]
+                    $updateMusicPlayer[]
+                ]
+            ;
+                $setServerVar[musicChnSent;0]
+                $setServerVar[musicPlayerChn;]
+                $setServerVar[musicPlayer;]
+                $updateMusicPlayer[]
+            ]
         ;
             $setServerVar[placeholderTrack;true]
             $jsonLoad[data;$playerAddTrack[$guildID;https://youtu.be/EKZNd2JMQPE]]
