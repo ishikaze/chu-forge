@@ -13,6 +13,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.10.0",
     "@snazzah/davey": "^0.1.12",
+    "@tryforge/forge.canvas": "^1.3.1",
     "@tryforge/forge.db": "^2.1.1",
     "@tryforge/forge.linked": "^2.2.1",
     "@tryforge/forge.music": "^1.0.0",

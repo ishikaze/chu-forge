@@ -3,6 +3,7 @@ const { ForgeClient } = require("@tryforge/forgescript");
 const { ForgeDB } = require("@tryforge/forge.db");
 const { ForgeLinked } = require('@tryforge/forge.linked')
 const { ForgeJSON } = require("forge.json")
+const { ForgeCanvas } = require("@tryforge/forge.canvas")
 const fs = require("fs");
 const path = require("path");
 
@@ -56,7 +57,7 @@ const client = new ForgeClient({
     "<@!1447615755985227776> "
   ],
   allowBots: true,
-  extensions: [new ForgeDB(), lavalink, new ForgeJSON()]
+  extensions: [new ForgeDB(), lavalink, new ForgeJSON(), new ForgeCanvas()]
 });
 
 const functionsPath = path.join(__dirname, "functions");
