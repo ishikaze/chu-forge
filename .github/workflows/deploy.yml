@@ -19,6 +19,7 @@ jobs:
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
             cd ~/chu-forge
+            git reset --hard HEAD
             git pull origin main
             npm install
             pm2 restart chu
