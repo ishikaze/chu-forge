@@ -124,19 +124,33 @@ client.commands.load("./commands");
 
 // ─── 6. HELPER FOR ACTIVE NODELINK PLAYERS ─────────────────────────
 function getActivePlayersCount() {
-  // Access the underlying lavalink-client manager players map
-  const players = lavalink.manager?.players || lavalink.players;
-  if (!players) return 0;
-
-  if (typeof players.size === "number") {
-    // Count players that are connected or actively playing
-    let active = 0;
-    for (const player of players.values()) {
-      if (player.connected || player.playing) active++;
+  // Method 1: Check Discord Voice States (100% reliable)
+  // If the bot is connected to a voice channel in a guild, a player is active there.
+  let voiceCount = 0;
+  if (client.user?.id && client.guilds?.cache) {
+    for (const guild of client.guilds.cache.values()) {
+      const voiceState = guild.voiceStates.cache.get(client.user.id);
+      if (voiceState && voiceState.channelId) {
+        voiceCount++;
+      }
     }
-    return active;
   }
-  return 0;
+
+  // Method 2: Check internal ForgeLinked / Lavalink collections
+  const manager =
+    lavalink?.manager ||
+    lavalink?.client ||
+    client?.lavalink ||
+    client?.linked ||
+    lavalink;
+
+  const players = manager?.players || manager?.playerManager?.players;
+
+  if (players && typeof players.size === "number" && players.size > 0) {
+    return players.size;
+  }
+
+  return voiceCount;
 }
 
 // ─── 7. EXPRESS API ENDPOINT ────────────────────────────────────────
