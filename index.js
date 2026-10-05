@@ -163,8 +163,8 @@ app.get("/api/stats", (req, res) => {
   res.json(stats);
 });
 
-app.listen(API_PORT, () => {
-  console.log(`API endpoint running on http://localhost:${API_PORT}/api/stats`);
+app.listen(API_PORT, "0.0.0.0", () => {
+  console.log(`API running on port ${API_PORT}`);
 });
 
 // ─── 8. LOGIN ───────────────────────────────────────────────────────
