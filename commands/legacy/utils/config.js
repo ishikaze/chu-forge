@@ -4,6 +4,7 @@ module.exports = {
     code: `
     $onlyIf[$or[$hasPerms[$guildID;$authorID;ManageGuild]==true;$authorID==$botOwnerID];You need at least the \`Manage Server\` permission to use this command.]
 
+    $setUserVar[configPage;1]
     $updateConfigMenu[send]
     `
 };
