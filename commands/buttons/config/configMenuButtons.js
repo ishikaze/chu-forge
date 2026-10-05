@@ -1,7 +1,7 @@
 module.exports = {
     type: "interactionCreate",
     code: `
-    $onlyIf[$getMessageVar[author;$messageID]==$authorID;$interactionReply[$ephemeralThis is not yours!]]
+    $onlyIf[$getMessageVar[author;$messageID]==$authorID;]
 
     $if[$customID==toggleAllowBafEmojis;
         $onlyIf[$or[$hasPerms[$guildID;$authorID;ManageGuild]==true;$authorID==$botOwnerID];]
