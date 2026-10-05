@@ -15,11 +15,10 @@ module.exports = {
     ]
 
     $if[$get[target]!=;
-        $registerFont[https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap;;true]
         $createCanvas[anti;512;512;
             $drawRect[;fill;#FFFFFF;0;0;512;512]
             $drawImage[;$userAvatar[$get[target]];0;0;512;512]
-            $drawText[;fill;x;1320px Indie Flower-latin;#FF0000;-20;512]
+            $drawText[;fill;X;740px M PLUS U-latin;#FF0000;-10;522]
         ]
         $renderCanvas[anti]
     ]
