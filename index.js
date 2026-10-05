@@ -6,6 +6,7 @@ const { ForgeJSON } = require("forge.json");
 const { ForgeCanvas } = require("@tryforge/forge.canvas");
 const fs = require("fs");
 const path = require("path");
+const cors = require('cors');
 const express = require("express");
 
 // ─── 1. USER TRACKING (Unique Command/Interaction Users) ─────────────
@@ -140,6 +141,7 @@ function getActivePlayersCount() {
 
 // ─── 7. EXPRESS API ENDPOINT ────────────────────────────────────────
 const app = express();
+app.use(cors());
 const API_PORT = process.env.API_PORT || 3003;
 
 app.get("/api/stats", (req, res) => {
