@@ -3,7 +3,7 @@ module.exports = {
     code: `
     $onlyIf[$authorID!=$botID;]
     $if[$getServerVar[allowSayHi;$guildID;false]==true;
-        $if[$checkContains[$toLowercase[$message];i'm;im]==true;
+        $if[$checkContains[$toLowercase[$message];i'm ;im ]==true;
             $textSplit[$message; ]
             $loop[$getTextSplitLength;
                 $if[$checkContains[$toLowercase[$splitText[$sub[$env[n];1]]];i'm;im]==true;
