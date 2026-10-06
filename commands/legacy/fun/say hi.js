@@ -6,7 +6,7 @@ module.exports = {
         $if[$checkContains[$toLowercase[$message];i'm ;im ]==true;
             $textSplit[$message; ]
             $loop[$getTextSplitLength;
-                $if[$checkContains[$toLowercase[$splitText[$sub[$env[n];1]]];i'm;im]==true;
+                $if[$checkContains[$toLowercase[$splitText[$sub[$env[n];1]]];i'm ;im ]==true;
                     $let[startFrom;$sub[$env[n]]]
                     $loop[$sub[$getTextSplitLength;$get[startFrom]];
                         $let[index;$sum[$get[startFrom];$sub[$env[m];1]]]
