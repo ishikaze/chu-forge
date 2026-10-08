@@ -2,8 +2,6 @@ module.exports = {
     name: "anti",
     type: "messageCreate",
     code: `
-    $onlyIf[$authorID==$botOwnerID;No.]
-
     $if[$userExists[$mentioned[0]]==false;
         $if[$userExists[$message[0]]==false;
             $sendMessage[$channelID;Please mention a user or provide a valid user ID!]
