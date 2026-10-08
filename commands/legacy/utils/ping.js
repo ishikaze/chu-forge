@@ -8,7 +8,7 @@ module.exports = {
             $addSection[
                 $addTextDisplay[# Hello!
 Chu, at your service!
--# Chu was built to be useful and do fun stuff!\n-# Running v0.5 (Build 256910052109)]
+-# Chu was built to be useful and do fun stuff!\n-# Running v0.5 (Build 256910090328)]
                 $addThumbnail[https://cloud.ishikaze.space/f/40C4/Untitled32_20261001192643_cropped.jpg]
             ]
             $addSeparator[Large;true]

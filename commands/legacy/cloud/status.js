@@ -42,6 +42,7 @@ module.exports = {
                     $addTextDisplay[Cloud tier: **$env[userResFull;data;group;name]**\n-# $round[$divide[$env[userResStorage;data;used];1073741824];2] GB / $round[$divide[$env[userResStorage;data;total];1073741824];2] GB used]
 
                     $addActionRow
+                    $addButton[https://cloud.ishikaze.space;Go to cloud;Link;;false]
                     $addButton[cloudLogOut;Log out;Danger]
                 ;
                     $addTextDisplay[Error: $env[userResFull;msg]]
