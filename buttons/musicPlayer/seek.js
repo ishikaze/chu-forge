@@ -2,6 +2,7 @@ module.exports = {
     name: "musicSeek",
     type: "interactionCreate",
     code: `
+    $onlyIf[$playerExists==true;]
     $if[$isButton==true;
         $modal[musicSeek;Seek to a position]
         $let[seconds;$round[$divide[$playerElapsedTime;1000];1]]

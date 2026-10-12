@@ -2,6 +2,7 @@ module.exports = {
     name: "musicSearch",
     type: "interactionCreate",
     code: `
+    $onlyIf[$playerExists==true;]
     $if[$playerExists==true;
         $if[$isButton==true;
             $modal[musicSearch;Track search]

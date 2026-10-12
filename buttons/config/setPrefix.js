@@ -9,8 +9,8 @@ module.exports = {
         Set prefix to \`$getUserVar[prefix]\` for you!
         $interactionUpdate
     ;
-        $setUserVar[prefix;$getUserVar[prefixBuffer]]
-        Set prefix to \`$getUserVar[prefix]\` for this server!
+        $setServerVar[prefix;$getUserVar[prefixBuffer]]
+        Set prefix to \`$getServerVar[prefix]\` for this server!
         $interactionUpdate
     ]
     `

@@ -2,6 +2,7 @@ module.exports = {
     name: "musicNext",
     type: "interactionCreate",
     code: `
+    $onlyIf[$playerExists==true;]
     $if[$playerSkipExists==true;
         $if[$playerSkip==true;
             $jsonLoad[data;$playerPreviousTrack]

@@ -1,7 +1,7 @@
 module.exports = {
     type: "messageCreate",
     code: `
-        $if[$channelID==$getServerVar[musicPlayerChn];
+        $if[$and[$channelID==$getServerVar[musicPlayerChn];$authorID!=$botID]==true;
             $setServerVar[musicChnSent;$sum[$getServerVar[musicChnSent;$guildID;0];1]]
         ]
     `

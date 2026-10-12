@@ -2,6 +2,7 @@ module.exports = {
     name: "musicSetVol",
     type: "interactionCreate",
     code: `
+    $onlyIf[$playerExists==true;]
     $if[$isButton==true;
         $modal[musicSetVol;Set volume]
         $addTextInput[v;Enter volume percentage;Short;true;Enter a number from 1 to 100;$playerGetVolume;1;3]

@@ -2,6 +2,7 @@ module.exports = {
     name: "musicLoop",
     type: "interactionCreate",
     code: `
+    $onlyIf[$playerExists==true;]
     $if[$playerLoopStatus==off;
         $if[$playerToggleLoop[$guildID;TRACK]==true;
             $updateMusicAction[[@$username\\]($userURL[$authorID]) toggled loop mode to: **Track**]

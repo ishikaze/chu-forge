@@ -1,6 +1,7 @@
 module.exports = {
     type: "interactionCreate",
     code: `
+    $onlyIf[$playerExists==true;]
     $textSplit[$customID;__&&&SEP__]
 
     $if[$splitText[0]==musicATQMany;

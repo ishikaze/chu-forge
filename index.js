@@ -121,6 +121,8 @@ if (fs.existsSync(functionsPath)) {
 }
 
 client.commands.load("./commands");
+client.commands.load("./events");
+client.commands.load("./buttons");
 
 // ─── 6. HELPER FOR ACTIVE NODELINK PLAYERS ─────────────────────────
 function getActivePlayersCount() {

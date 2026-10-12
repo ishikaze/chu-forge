@@ -12,7 +12,7 @@ module.exports = {
         $if[$voiceID[$guildID;$authorID]==;
             You're not in a vc...
         ;
-            $if[$playerCreate[$guildID;$voiceID;$channelID;10;false;false]==true;
+            $if[$playerCreate[$guildID;$voiceID;$channelID;1;false;false]==true;
                 $if[$playerJoinVC==true;
                     $try[
                         $if[$deleteMessage[$getServerVar[musicPlayerChn];$getServerVar[musicPlayer]]==1;]

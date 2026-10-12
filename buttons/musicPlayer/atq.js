@@ -1,9 +1,11 @@
 module.exports = {
     type: "interactionCreate",
     code: `
+    $onlyIf[$playerExists==true;]
     $textSplit[$customID;__&&&SEP__]
 
     $if[$splitText[0]==musicATQ;
+        $interactionUpdate[$addTextDisplay[Please wait...]]
         $jsonLoad[data;$playerSearchTrack[$guildID;$splitText[1]]]
         
         $if[$isValidJSON[$playerAddTrack[$guildID;$env[data;tracks;0;url]]]==true;]
